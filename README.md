@@ -1,8 +1,6 @@
 # IntelGemm
 GEneral Matrix Multiplication with Intel Compiler and his powerfull Autoparalleziation and Autovectorization
 
-The matrix multiplication is optimized and its not the common formula which is unusable for a large size matrix.
-This optimization is used by the fortran BLAS library.
 
 ```
 
