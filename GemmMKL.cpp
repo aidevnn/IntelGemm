@@ -37,15 +37,19 @@ void fillRand(int m, int n, float Mat[], bool isrounded = true) {
 }
 
 void displayMatrix(int m, int n, float* Mat, string name, bool isrounded = true) {
-	printf("Matrix (%i %i) %s \n", m, n, name.c_str());
+	char buff[30];
+	sprintf(buff, "Matrix[%d %d] %s", m, n, name.c_str());
+	cout << buff << endl;
+
 	string fmt = isrounded ? "%6.0f" : "%6.2f";
 	for (int i = 0; i < m; ++i) {
 		for (int j = 0; j < n; ++j) {
-			printf(fmt.c_str(), Mat[i * n + j]);
+			sprintf(buff, fmt.c_str(), Mat[i * n + j]);
+			cout << buff;
 		}
-		printf("\n");
+		cout << endl;
 	}
-	printf("\n");
+	cout << endl;
 }
 
 void MatMul0(int m, int n, int k, float* a, float* b, float* c) {
@@ -104,7 +108,9 @@ void testGemm(int m, int n, int k) {
 
 void benchGemm(int m, int n, int k) {
 
-	printf("Start Bench M=%i N=%i and K=%i \n", m, n, k);
+	char buff[50];
+	sprintf(buff, "Start Bench M=%i N=%i and K=%i", m, n, k);
+	cout << buff << endl;
 
 	float* A = (float *) malloc(m * k * sizeof(float));
 	float* B = (float *) malloc(n * k * sizeof(float));
@@ -127,34 +133,37 @@ void benchGemm(int m, int n, int k) {
 		MatMul2(m, n, k, A, B, C2);
 	}
 
-	cout << "Bench methode 0" << endl;
+	cout << "Bench method 0" << endl;
 	for (int i = 0; i < 5; ++i) {
 		for (int j = 0; j < m * n; ++j)
 			C0[i] = 0.0f;
 
 		now = high_resolution_clock::now();
 		MatMul0(m, n, k, A, B, C0);
-		printf("TIME %8.2f ms \n", (round(TIME * 100000.0) * 0.01));
+		sprintf(buff, "TIME %8.2f ms", (round(TIME * 100000.0) * 0.01));
+		cout << buff << endl;
 	}
 
-	cout << "Bench methode 1" << endl;
+	cout << "Bench method 1" << endl;
 	for (int i = 0; i < 5; ++i) {
 		for (int j = 0; j < m * n; ++j)
 			C1[i] = 0.0f;
 
 		now = high_resolution_clock::now();
 		MatMul1(m, n, k, A, B, C1);
-		printf("TIME %8.2f ms \n", (round(TIME * 100000.0) * 0.01));
+		sprintf(buff, "TIME %8.2f ms", (round(TIME * 100000.0) * 0.01));
+		cout << buff << endl;
 	}
 
-	cout << "Bench methode 2" << endl;
+	cout << "Bench method 2" << endl;
 	for (int i = 0; i < 5; ++i) {
 		for (int j = 0; j < m * n; ++j)
 			C2[i] = 0.0f;
 
 		now = high_resolution_clock::now();
 		MatMul2(m, n, k, A, B, C2);
-		printf("TIME %8.2f ms \n", (round(TIME * 100000.0) * 0.01));
+		sprintf(buff, "TIME %8.2f ms", (round(TIME * 100000.0) * 0.01));
+		cout << buff << endl;
 	}
 
 	cout << "End." << endl;
@@ -168,7 +177,7 @@ void benchGemm(int m, int n, int k) {
 }
 
 int main() {
-	cout << "HelloWorld MKL Gemm" << endl; // prints HelloWorld Test
+	cout << "HelloWorld Intel MKL Gemm" << endl; // prints HelloWorld Test
 	srand(time(NULL));
 
 	testGemm(2, 4, 3);
