@@ -3,7 +3,6 @@ GEneral Matrix Multiplication with Intel Compiler and his powerfull Autoparallel
 
 
 ```
-
 void MatMul0(int m, int n, int k, float* a, float* b, float* c) {
 	for (int i = 0; i < m; ++i) {
 		for (int j = 0; j < n; ++j) {
@@ -27,7 +26,6 @@ void MatMul1(int m, int n, int k, float* a, float* b, float* c) {
 void MatMul2(int m, int n, int k, float* a, float* b, float* c) {
 	cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, m, n, k, 1.0f, a, k, b, n, 0.0f, c, n);
 }
-
 ```
 
 ### The Output
