@@ -73,3 +73,26 @@ TIME    91.43 ms
 TIME    92.41 ms
 End.
 ```
+
+```
+Start Bench M=3840 N=5120 and K=2560
+Bench method 0
+TIME   675.68 ms
+TIME   668.07 ms
+TIME   674.81 ms
+TIME   677.28 ms
+TIME   673.65 ms
+Bench method 1
+TIME   669.31 ms
+TIME   666.31 ms
+TIME   673.02 ms
+TIME   665.42 ms
+TIME   696.23 ms
+Bench method 2
+TIME   704.99 ms
+TIME   688.36 ms
+TIME   675.51 ms
+TIME   676.15 ms
+TIME   677.55 ms
+End.
+```
