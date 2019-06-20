@@ -184,7 +184,8 @@ int main() {
 
 //	benchGemm(96, 128, 64);
 //	benchGemm(960, 1280, 640);
-	benchGemm(1920, 2560, 1280);
+//	benchGemm(1920, 2560, 1280);
+	benchGemm(3840, 5120, 2560);
 
 	return 0;
 }
