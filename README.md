@@ -30,7 +30,7 @@ void MatMul2(int m, int n, int k, float* a, float* b, float* c) {
 
 ### The Output
 ```
-HelloWorld MKL Gemm
+HelloWorld Intel MKL Gemm
 Matrix (2 3) A 
      5     4     0
     -3     6     1
