@@ -61,8 +61,9 @@ void MatMul0(int m, int n, int k, float* a, float* b, float* c) {
 void MatMul1(int m, int n, int k, float* a, float* b, float* c) {
 	for (int i = 0; i < m; ++i) {
 		for (int k0 = 0; k0 < k; ++k0) {
-			for (int j = 0; j < n; ++j)
+			for (int j = 0; j < n; ++j) {
 				c[i * n + j] += a[i * k + k0] * b[k0 * n + j];
+			}
 		}
 	}
 }
