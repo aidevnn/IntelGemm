@@ -31,45 +31,45 @@ void MatMul2(int m, int n, int k, float* a, float* b, float* c) {
 ### The Output
 ```
 HelloWorld Intel MKL Gemm
-Matrix (2 3) A 
-     5     4     0
-    -3     6     1
+Matrix[2 3] A
+     0    -4     4
+     7     2    -4
 
-Matrix (3 4) B 
-     2     8    -4     1
-     0     5     9     9
-     8    -6    -9    -7
+Matrix[3 4] B
+    -3    -2    -3    -2
+    -3     4    -9     3
+   -10    -5     8    -3
 
-Matrix (2 4) A x B meth0 
-    10    60    16    41
-     2     0    57    44
+Matrix[2 4] A x B meth0
+   -28   -36    68   -24
+    13    14   -71     4
 
-Matrix (2 4) A x B meth1 
-    10    60    16    41
-     2     0    57    44
+Matrix[2 4] A x B meth1
+   -28   -36    68   -24
+    13    14   -71     4
 
-Matrix (2 4) A x B meth2 
-    10    60    16    41
-     2     0    57    44
+Matrix[2 4] A x B meth2
+   -28   -36    68   -24
+    13    14   -71     4
 
-Start Bench M=1920 N=2560 and K=1280 
-Bench methode 0
-TIME    83.53 ms 
-TIME    90.73 ms 
-TIME    90.53 ms 
-TIME    92.97 ms 
-TIME    89.62 ms 
-Bench methode 1
-TIME    89.26 ms 
-TIME    90.08 ms 
-TIME    92.57 ms 
-TIME    88.27 ms 
-TIME    92.38 ms 
-Bench methode 2
-TIME   104.02 ms 
-TIME    92.48 ms 
-TIME    90.05 ms 
-TIME    91.64 ms 
-TIME    92.47 ms 
+Start Bench M=1920 N=2560 and K=1280
+Bench method 0
+TIME    97.63 ms
+TIME    95.18 ms
+TIME    91.10 ms
+TIME    89.63 ms
+TIME    88.26 ms
+Bench method 1
+TIME    88.22 ms
+TIME    88.36 ms
+TIME    89.07 ms
+TIME    86.03 ms
+TIME    88.58 ms
+Bench method 2
+TIME    89.54 ms
+TIME    92.78 ms
+TIME    91.48 ms
+TIME    91.43 ms
+TIME    92.41 ms
 End.
 ```
